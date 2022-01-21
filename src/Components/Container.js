@@ -6,7 +6,7 @@ import GroceryList from "./GroceryList"
 class Container extends Component {
     constructor(props) {
         super(props)
-        this.onItemClick = this.onItemClick.bind(this);
+        this.clickItem = this.clickItem.bind(this);
         this.state = {
             groceryItems: [
                 { id: 1, title: 'Apples' },
@@ -18,9 +18,10 @@ class Container extends Component {
         }
     }
 
-    onItemClick(item) {
+    clickItem(item) {
         console.log(`Clicked ${item.id}: ${item.title}`);
-    }
+
+    };
 
     render() {
         return (
@@ -28,15 +29,13 @@ class Container extends Component {
                 <ShoppingCart
                     key={this.state.shoppingListItems.id}
                     items={this.state.shoppingListItems}
-                    clickitem={this.onItemClick}
-                // clickitem={this.state.onItemClick}
+                    clickItem={this.clickItem}
                 />
 
                 <GroceryList
                     key={this.state.groceryItems.id}
                     items={this.state.groceryItems}
-                    clickitem={this.onItemClick}
-                // clickitem={this.state.onItemClick}
+                    clickItem={this.clickItem}
                 />
             </div>
         )

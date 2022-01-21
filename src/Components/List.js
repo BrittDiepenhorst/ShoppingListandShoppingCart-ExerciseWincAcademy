@@ -1,21 +1,22 @@
-import React from "react"
+import React, { Component } from "react"
 import ListItem from "./ListItem"
 
-function List({ items, onItemClick }) {
-    return (
-        <div>
-            <ul>
-                {items.map((item) => (
-                    <ListItem
-                        key={item.id}
-                        item={item}
-                        onItemClick={() => { item.onItemClick(item) }}
-                    // clickitem={() => item.shoppingListItems.onItemClick(item.shoppingListItems.id)}
-                    />
-                ))}
-            </ul>
-        </div>
-    )
+class List extends Component {
+    render() {
+        return (
+            <div>
+                <ul>
+                    {this.props.items.map((item) => (
+                        <ListItem
+                            key={item.id}
+                            item={item}
+                            clickItem={() => { this.props.clickItem(item) }}
+                        />
+                    ))}
+                </ul>
+            </div>
+        )
+    }
 }
 
 export default List;

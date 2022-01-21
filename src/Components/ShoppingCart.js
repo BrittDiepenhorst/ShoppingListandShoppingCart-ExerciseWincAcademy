@@ -1,12 +1,12 @@
 import React from "react"
 import List from "./List"
 
-function ShoppingCart({ items, onItemClick }) {
+function ShoppingCart({ items, clickItem }) {
     return (
         <List
             key={items.id}
             items={items}
-            clickitem={onItemClick}
+            clickItem={clickItem}
         />
     )
 }

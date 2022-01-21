@@ -1,15 +1,15 @@
 import React from "react"
 
-function ListItem({ item, onItemClick }) {
+function ListItem({ item, clickItem }) {
     return (
         <li
             key={item.id}
             className="list-item"
-            onClick={onItemClick}
+            onClick={clickItem}
             value={item.title}
-        >{item.title}
+        ><div>{item.title}</div>
         </li>
     )
-}
+};
 
 export default ListItem;
