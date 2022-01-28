@@ -1,0 +1,25 @@
+.shopping {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.list-item {
+    list-style: none;
+    text-align: left;
+    background-color: coral;
+    width: 150px;
+    padding: 5px 150px 5px 5px;
+    margin: 10px;
+}
+
+/* .list-item:nth-child(odd){
+    background-color: cornflowerblue;
+} */
+
+.shopping:nth-child(1) .list-item{
+    background-color: cornflowerblue;
+}
+
+.shopping:nth-child(2) .list-item{
+    background-color: coral;
+}

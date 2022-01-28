@@ -7,7 +7,7 @@ function ListItem({ item, clickItem }) {
             className="list-item"
             onClick={clickItem}
             value={item.title}
-        ><div>{item.title}</div>
+        >{item.title}
         </li>
     )
 };
