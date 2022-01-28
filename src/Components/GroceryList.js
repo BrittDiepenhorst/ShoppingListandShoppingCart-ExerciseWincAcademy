@@ -2,13 +2,13 @@ import React from "react"
 import List from "./List"
 import InputField from "./InputField"
 
-function GroceryList({ items, clickItem, handleSubmit }) {
+function GroceryList({ items, clickItem, addItemToGroceryList }) {
     return (
         console.log(items),
         <div>
             <InputField
                 type="text"
-                onSubmit={handleSubmit}
+                addItemToGroceryList={addItemToGroceryList}
             />
             <List
                 key={items.id}

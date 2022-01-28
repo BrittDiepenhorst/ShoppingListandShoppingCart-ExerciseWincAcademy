@@ -6,20 +6,20 @@
 .list-item {
     list-style: none;
     text-align: left;
-    background-color: coral;
     width: 150px;
     padding: 5px 150px 5px 5px;
     margin: 10px;
 }
 
-/* .list-item:nth-child(odd){
-    background-color: cornflowerblue;
-} */
 
-.shopping:nth-child(1) .list-item{
-    background-color: cornflowerblue;
-}
-
-.shopping:nth-child(2) .list-item{
-    background-color: coral;
-}
+ul.app-list li:nth-child(2n + 1) {
+    background-color: rgb(199, 118, 118);
+  }
+  
+  .shopping-cart ul.app-list li {
+    background-color: rgb(165, 181, 235);
+  }
+  
+  .shopping-cart ul.app-list li:nth-child(2n + 1) {
+    background-color: rgb(127, 142, 190);
+  }

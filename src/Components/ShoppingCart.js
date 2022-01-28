@@ -1,13 +1,13 @@
 import React from "react"
 import List from "./List"
 
-function ShoppingCart({ items, clickItem }) {
+function ShoppingCart({ items, clickItemWontModify }) {
     return (
-        <div>
+        <div className="shopping-cart">
             <List
                 key={items.id}
                 items={items}
-                clickItem={clickItem}
+                clickItem={clickItemWontModify}
             />
 
         </div>

@@ -5,7 +5,7 @@ class List extends Component {
     render() {
         return (
             <div>
-                <ul>
+                <ul className="app-list">
                     {this.props.items.map((item) => (
                         <ListItem
                             key={item.id}

@@ -6,16 +6,21 @@ import '../Container.css'
 class Container extends Component {
     constructor(props) {
         super(props)
+
         this.clickItem = this.clickItem.bind(this);
+        this.clickItemWontModify = this.clickItemWontModify.bind(this);
         this.emptyCart = this.emptyCart.bind(this);
-        this.handleSumbit = this.handleSubmit.bind(this);
+        this.addItemToGroceryList = this.addItemToGroceryList.bind(this);
+
         this.state = {
             groceryItems: [
                 { id: 1, title: 'Apples' },
-                { id: 2, title: 'Carton of milk' }
+                { id: 2, title: 'Carton of milk' },
+                { id: 4, title: 'Kiwis' }
             ],
             shoppingListItems: [
-                { id: 3, title: 'Bananas' }
+                { id: 3, title: 'Bananas' },
+                { id: 5, title: 'Bread' }
             ]
         }
     }
@@ -27,6 +32,10 @@ class Container extends Component {
         })
     };
 
+    clickItemWontModify(item) {
+        console.log(`Clicked ${item.id}: ${item.title} but I wont modify anything!`)
+    }
+
     emptyCart() {
         this.setState(() => {
             return {
@@ -35,11 +44,17 @@ class Container extends Component {
         });
     }
 
-    handleSubmit(event) {
-        event.preventDefault();
+    addItemToGroceryList = (event) => {
         this.setState({
-            shoppingListItems: [...this.state.shoppingListItems, event.target.value]
+            groceryItems: [...this.state.groceryItems, {
+                id: this.state.groceryItems.length +
+                    this.state.shoppingListItems.length +
+                    1,
+                title: event.target.value,
+                amount: 1,
+            }]
         })
+        event.preventDefault();
     }
 
     render() {
@@ -51,7 +66,7 @@ class Container extends Component {
                         key={this.state.groceryItems.id}
                         items={this.state.groceryItems}
                         clickItem={this.clickItem}
-                        handleSubmit={this.handleSubmit}
+                        addItemToGroceryList={this.addItemToGroceryList}
                     />
                 </div>
 
@@ -61,7 +76,7 @@ class Container extends Component {
                     <ShoppingCart
                         key={this.state.shoppingListItems.id}
                         items={this.state.shoppingListItems}
-                        clickItem={this.clickItem}
+                        clickItem={this.clickItemWontModify}
                     />
                 </div>
             </div>
