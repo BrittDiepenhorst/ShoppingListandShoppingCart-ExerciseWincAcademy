@@ -1,4 +1,4 @@
-.shopping {
+.container {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
@@ -11,9 +11,12 @@
     margin: 10px;
 }
 
-
-ul.app-list li:nth-child(2n + 1) {
+ul.app-list li {
     background-color: rgb(199, 118, 118);
+  }
+
+  ul.app-list li:nth-child(2n + 1) {
+    background-color: rgb(201, 166, 166);
   }
   
   .shopping-cart ul.app-list li {

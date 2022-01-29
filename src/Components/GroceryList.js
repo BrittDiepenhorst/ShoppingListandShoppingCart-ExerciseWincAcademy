@@ -2,21 +2,20 @@ import React from "react"
 import List from "./List"
 import InputField from "./InputField"
 
-function GroceryList({ items, clickItem, addItemToGroceryList }) {
+function GroceryList({ items, onItemClick, onItemAdd }) {
     return (
         console.log(items),
-        <div>
+        <div className="grocery-list">
+            <h1>Shopping list</h1>
             <InputField
-                type="text"
-                addItemToGroceryList={addItemToGroceryList}
-            />
+                onSubmit={onItemAdd} />
+
             <List
                 key={items.id}
                 items={items}
-                clickItem={clickItem}
-            />
+                onItemClick={onItemClick} />
         </div>
-    )
+    );
 }
 
 export default GroceryList;

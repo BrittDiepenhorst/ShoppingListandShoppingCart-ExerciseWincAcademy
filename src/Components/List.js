@@ -10,7 +10,8 @@ class List extends Component {
                         <ListItem
                             key={item.id}
                             item={item}
-                            clickItem={() => { this.props.clickItem(item) }}
+                            clickItem={() => { this.props.onItemClick(item) }}
+                            showQuantities={this.props.showQuantities}
                         />
                     ))}
                 </ul>
